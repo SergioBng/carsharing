@@ -1,6 +1,8 @@
 package com.trutsin.dal.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -24,6 +26,18 @@ public class User {
 
     @Column
     private String role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Trip> tripList = new ArrayList<>();
+
+    public User(String firstName, String lastName, String email, String password, String role, List<Trip> tripList) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.tripList = tripList;
+    }
 
     public User(String firstName, String lastName, String email, String password, String role) {
         this.firstName = firstName;
