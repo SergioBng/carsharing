@@ -1,7 +1,10 @@
 package com.trutsin.dal;
 
+import com.trutsin.dal.dao.UserDao;
+import com.trutsin.dal.dao.impl.CarDaoImpl;
 import com.trutsin.dal.dao.impl.TripDaoImpl;
 import com.trutsin.dal.dao.impl.UserDaoImpl;
+import com.trutsin.dal.entity.Car;
 import com.trutsin.dal.entity.Trip;
 import com.trutsin.dal.entity.User;
 import org.hibernate.Session;
@@ -17,6 +20,12 @@ public class CarsharingMappingApp {
 
         User user1 = new User("Mark", "Corv", "mark1220", "123Qw23", "driver");
         User user2 = new User("Genry", "Ford", "Genry65", "12340999k", "driver");
+        Car car1 = new Car("Skoda Rapid");
+        Car car2 = new Car("Volkswagen Polo");
+        UserDaoImpl.getInstance().create(user1, session);
+        UserDaoImpl.getInstance().create(user2, session);
+        CarDaoImpl.getInstance().create(car1, session);
+        CarDaoImpl.getInstance().create(car2, session);
 
         Trip tripFromDb = TripDaoImpl.getInstance().readById(3, session);
         System.out.println(tripFromDb);

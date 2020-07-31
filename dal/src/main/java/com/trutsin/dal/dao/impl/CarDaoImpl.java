@@ -5,6 +5,20 @@ import com.trutsin.dal.entity.Car;
 import org.hibernate.Session;
 
 public class CarDaoImpl implements CarDao {
+    private static final Object LOCK = new Object();
+    private static CarDaoImpl INSTANCE = null;
+
+    public static CarDaoImpl getInstance() {
+        if (INSTANCE == null) {
+            synchronized (LOCK) {
+                if (INSTANCE == null) {
+                    INSTANCE = new CarDaoImpl();
+                }
+            }
+        }
+        return INSTANCE;
+    }
+
     @Override
     public void create(Car car, Session session) {
         session.save(car);

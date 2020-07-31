@@ -21,6 +21,10 @@ public class Car {
     public Car() {
     }
 
+    public Car(String model) {
+        this.model = model;
+    }
+
     public Car(String model, List<Trip> tripList) {
         this.model = model;
         this.tripList = tripList;
