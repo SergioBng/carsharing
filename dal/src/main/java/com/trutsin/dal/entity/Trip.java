@@ -23,11 +23,16 @@ public class Trip {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Trip(int time, double cost, String status, User user) {
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
+
+    public Trip(int time, double cost, String status, User user, Car car) {
         this.time = time;
         this.cost = cost;
         this.status = status;
         this.user = user;
+        this.car = car;
     }
 
     public Trip(int time, double cost, String status) {
@@ -79,6 +84,14 @@ public class Trip {
         this.id = id;
     }
 
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     @Override
     public String toString() {
         return "Trip{" +
@@ -87,6 +100,7 @@ public class Trip {
                 ", cost=" + cost +
                 ", status='" + status + '\'' +
                 ", user=" + user +
+                ", car=" + car +
                 '}';
     }
 }
