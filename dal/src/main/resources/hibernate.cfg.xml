@@ -10,5 +10,6 @@
         <property name="hibernate.format_sql">true</property>
 
         <mapping class="com.trutsin.dal.entity.User"/>
+        <mapping class="com.trutsin.dal.entity.Trip"/>
     </session-factory>
 </hibernate-configuration>

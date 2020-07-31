@@ -19,7 +19,7 @@ public class User {
     private String lastName;
 
     @Column
-    private String email;
+    private String login;
 
     @Column
     private String password;
@@ -30,19 +30,19 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Trip> tripList = new ArrayList<>();
 
-    public User(String firstName, String lastName, String email, String password, String role, List<Trip> tripList) {
+    public User(String firstName, String lastName, String login, String password, String role, List<Trip> tripList) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.login = login;
         this.password = password;
         this.role = role;
         this.tripList = tripList;
     }
 
-    public User(String firstName, String lastName, String email, String password, String role) {
+    public User(String firstName, String lastName, String login, String password, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.login = login;
         this.password = password;
         this.role = role;
     }
@@ -74,12 +74,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -98,15 +98,24 @@ public class User {
         this.role = role;
     }
 
+    public List<Trip> getTripList() {
+        return tripList;
+    }
+
+    public void setTripList(List<Trip> tripList) {
+        this.tripList = tripList;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
+                ", tripList=" + tripList +
                 '}';
     }
 }

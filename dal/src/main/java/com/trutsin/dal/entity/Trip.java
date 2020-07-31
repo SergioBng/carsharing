@@ -19,7 +19,7 @@ public class Trip {
     @Column
     private String status;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -71,6 +71,14 @@ public class Trip {
         this.user = user;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Trip{" +
@@ -81,4 +89,5 @@ public class Trip {
                 ", user=" + user +
                 '}';
     }
+
 }
