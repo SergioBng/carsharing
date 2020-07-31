@@ -11,5 +11,6 @@
 
         <mapping class="com.trutsin.dal.entity.User"/>
         <mapping class="com.trutsin.dal.entity.Trip"/>
+        <mapping class="com.trutsin.dal.entity.Car"/>
     </session-factory>
 </hibernate-configuration>
