@@ -26,7 +26,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car readById(int id, Session session) {
-        return session.find(Car.class, session);
+        return session.find(Car.class, id);
     }
 
     @Override

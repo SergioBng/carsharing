@@ -3,6 +3,7 @@ package com.trutsin.dal.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "user")
@@ -117,5 +118,23 @@ public class User {
                 ", role='" + role + '\'' +
                 ", tripList=" + tripList +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(login, user.login) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(role, user.role) &&
+                Objects.equals(tripList, user.tripList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, login, password, role, tripList);
     }
 }
