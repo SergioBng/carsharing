@@ -1,9 +1,7 @@
 package com.trutsin.dal;
 
 import com.trutsin.dal.dao.impl.CarDaoImpl;
-import com.trutsin.dal.dao.impl.UserDaoImpl;
 import com.trutsin.dal.entity.Car;
-import com.trutsin.dal.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

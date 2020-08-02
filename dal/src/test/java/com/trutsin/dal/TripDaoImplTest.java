@@ -1,9 +1,6 @@
 package com.trutsin.dal;
 
-import com.trutsin.dal.dao.TripDao;
-import com.trutsin.dal.dao.impl.CarDaoImpl;
 import com.trutsin.dal.dao.impl.TripDaoImpl;
-import com.trutsin.dal.entity.Car;
 import com.trutsin.dal.entity.Trip;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
