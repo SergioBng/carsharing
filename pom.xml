@@ -7,5 +7,6 @@
   <packaging>pom</packaging>
   <name>carsharing</name>
 <modules>  <module>dal</module>
+    <module>service</module>
   </modules>
 </project>
