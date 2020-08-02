@@ -1,6 +1,7 @@
 package com.trutsin.dal.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "trip")
@@ -102,5 +103,22 @@ public class Trip {
                 ", user=" + user.toString() +
                 ", car=" + car.toString() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trip trip = (Trip) o;
+        return time == trip.time &&
+                Double.compare(trip.cost, cost) == 0 &&
+                Objects.equals(status, trip.status) &&
+                Objects.equals(user, trip.user) &&
+                Objects.equals(car, trip.car);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, cost, status, user, car);
     }
 }
