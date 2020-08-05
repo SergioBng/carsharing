@@ -32,8 +32,11 @@ public class CarsharingMappingApp {
 //        TripDaoImpl.getInstance().create(trip1, session);
 
         Trip tripFromDb = TripDaoImpl.getInstance().readById(8, session);
+        System.out.println(tripFromDb);
         String name = tripFromDb.getUser().getLastName();
         System.out.println(name);
+
+
 
 
         transaction.commit();

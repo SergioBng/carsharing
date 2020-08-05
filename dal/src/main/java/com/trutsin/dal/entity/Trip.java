@@ -100,7 +100,6 @@ public class Trip {
                 ", time=" + time +
                 ", cost=" + cost +
                 ", status='" + status + '\'' +
-                ", user=" + user.toString() +
                 ", car=" + car.toString() +
                 '}';
     }
