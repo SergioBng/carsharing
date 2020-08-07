@@ -6,6 +6,19 @@ import org.hibernate.Session;
 
 public class UserService {
     Session session;
+    private static final Object LOCK = new Object();
+    private static UserService INSTANCE = null;
+
+    public static UserService getInstance() {
+        if (INSTANCE == null) {
+            synchronized (LOCK) {
+                if (INSTANCE == null) {
+                    INSTANCE = new UserService();
+                }
+            }
+        }
+        return INSTANCE;
+    }
 
     public void createUser(User user) {
         UserDaoImpl.getInstance().create(user, session);
