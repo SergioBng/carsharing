@@ -52,7 +52,6 @@ public class Car {
         return "Car{" +
                 "id=" + id +
                 ", model='" + model + '\'' +
-                ", tripList=" + tripList +
                 '}';
     }
 

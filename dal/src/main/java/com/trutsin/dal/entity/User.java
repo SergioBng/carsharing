@@ -116,7 +116,6 @@ public class User {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
-                ", tripList=" + tripList +
                 '}';
     }
 
