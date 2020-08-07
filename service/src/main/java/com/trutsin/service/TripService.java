@@ -20,19 +20,19 @@ public class TripService {
         return INSTANCE;
     }
 
-    public void createTrip(Trip trip) {
+    public void createTrip(Trip trip, Session session) {
         TripDaoImpl.getInstance().create(trip, session);
     }
 
-    public Trip readTripById(int id) {
+    public Trip readTripById(int id, Session session) {
         return TripDaoImpl.getInstance().readById(id, session);
     }
 
-    public void updateTrip(Trip trip) {
+    public void updateTrip(Trip trip, Session session) {
         TripDaoImpl.getInstance().update(trip, session);
     }
 
-    public void deleteTrip(Trip trip) {
+    public void deleteTrip(Trip trip, Session session) {
         TripDaoImpl.getInstance().delete(trip, session);
     }
 }

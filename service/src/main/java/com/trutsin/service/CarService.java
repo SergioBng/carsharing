@@ -20,19 +20,19 @@ public class CarService {
         return INSTANCE;
     }
 
-    public void createCar(Car car) {
+    public void createCar(Car car, Session session) {
         CarDaoImpl.getInstance().create(car, session);
     }
 
-    public Car readCarById(int id) {
+    public Car readCarById(int id, Session session) {
         return CarDaoImpl.getInstance().readById(id, session);
     }
 
-    public void updateCar(Car car) {
+    public void updateCar(Car car, Session session) {
         CarDaoImpl.getInstance().update(car, session);
     }
 
-    public void deleteCar(Car car) {
+    public void deleteCar(Car car, Session session) {
         CarDaoImpl.getInstance().delete(car, session);
     }
 }

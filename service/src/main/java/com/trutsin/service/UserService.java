@@ -5,7 +5,6 @@ import com.trutsin.dal.entity.User;
 import org.hibernate.Session;
 
 public class UserService {
-    Session session;
     private static final Object LOCK = new Object();
     private static UserService INSTANCE = null;
 
@@ -20,19 +19,19 @@ public class UserService {
         return INSTANCE;
     }
 
-    public void createUser(User user) {
-        UserDaoImpl.getInstance().create(user, session);
+    public void createUser(User user, Session session) {
+        UserDaoImpl.getInstance().create(user,session);
     }
 
-    public User readUserById(int id) {
+    public User readUserById(int id, Session session) {
         return UserDaoImpl.getInstance().readById(id, session);
     }
 
-    public void updateUser(User user) {
+    public void updateUser(User user, Session session) {
         UserDaoImpl.getInstance().update(user, session);
     }
 
-    public void deleteUser(User user) {
+    public void deleteUser(User user, Session session) {
         UserDaoImpl.getInstance().delete(user, session);
     }
 }
