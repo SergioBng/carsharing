@@ -8,5 +8,6 @@
   <name>carsharing</name>
 <modules>  <module>dal</module>
     <module>service</module>
+    <module>web</module>
   </modules>
 </project>
