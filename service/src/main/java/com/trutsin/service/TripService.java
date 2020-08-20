@@ -3,29 +3,17 @@ package com.trutsin.service;
 import com.trutsin.dal.dao.impl.TripDaoImpl;
 import com.trutsin.dal.entity.Trip;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class TripService {
-    Session session;
-    private static final Object LOCK = new Object();
-    private static TripService INSTANCE = null;
+    private final SessionFactory sessionFactory;
 
-    public static TripService getInstance() {
-        if (INSTANCE == null) {
-            synchronized (LOCK) {
-                if (INSTANCE == null) {
-                    INSTANCE = new TripService();
-                }
-            }
-        }
-        return INSTANCE;
+    public TripService(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    public void createTrip(Trip trip, Session session) {
-        TripDaoImpl.getInstance().create(trip, session);
-    }
-
-    public Trip readTripById(int id, Session session) {
-        return TripDaoImpl.getInstance().readById(id, session);
+    public Trip readTripById(int id, TripService tripService) {
+        return TripDaoImpl.getInstance().readById(id, tripService.sessionFactory.openSession());
     }
 
     public void updateTrip(Trip trip, Session session) {
