@@ -25,10 +25,14 @@ public class HibernateConfig {
     @Value("${jdbc.password}")
     private String password;
 
-    @Value("${jdbc.dialect}")
+    @Value("${hibernate.dialect}")
     private String dialect;
-    @Value("${jdbc.show_sql}")
+    @Value("${hibernate.show_sql}")
     private String showSql;
+    @Value("${hibernate.format_sql}")
+    private String formatSql;
+    @Value("${hibernate.creation_policy}")
+    private String creationPolicy;
 
     @Bean
     public DataSource dataSource() {
@@ -52,8 +56,10 @@ public class HibernateConfig {
     @Bean
     public Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hebirnate.dialect", dialect);
-        properties.setProperty("hebirnate.show_sql", showSql);
+        properties.setProperty("hibernate.dialect", dialect);
+        properties.setProperty("hibernate.show_sql", showSql);
+        properties.setProperty("hibernate.format_sql", formatSql);
+        properties.setProperty("hibernate.hbm2ddl.auto", creationPolicy);
         return properties;
     }
 
