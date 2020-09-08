@@ -12,8 +12,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = {"com.trutsin.dal.dao", "com.trutsin.service"})
-@PropertySource("Classpath:db.properties")
+@ComponentScan(basePackages = {"com.trutsin.dal.dao", "com.trutsin.dal.entity"})
+@PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 public class HibernateConfig {
     @Value("${jdbc.driver}")
