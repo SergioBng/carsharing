@@ -3,8 +3,13 @@ package com.trutsin.dal.dao.impl;
 import com.trutsin.dal.dao.CarDao;
 import com.trutsin.dal.entity.Car;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class CarDaoImpl implements CarDao {
+    @Autowired
+    private SessionFactory sessionFactory;
+
     private static final Object LOCK = new Object();
     private static CarDaoImpl INSTANCE = null;
 
