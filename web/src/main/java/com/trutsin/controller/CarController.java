@@ -9,9 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class CarController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView allCars() {
+    public ModelAndView showHome() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("cars");
+        modelAndView.setViewName("showHome");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/cars", method = RequestMethod.GET)
+    public ModelAndView showCars() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("showCars");
         return modelAndView;
     }
 }
