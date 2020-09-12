@@ -5,10 +5,16 @@ import com.trutsin.dal.entity.Car;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class CarDaoImpl implements CarDao {
-    @Autowired
     private SessionFactory sessionFactory;
+
+    @Autowired
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     private static final Object LOCK = new Object();
     private static CarDaoImpl INSTANCE = null;
@@ -22,6 +28,10 @@ public class CarDaoImpl implements CarDao {
             }
         }
         return INSTANCE;
+    }
+
+    public Car readById(int id) {
+        return sessionFactory.getCurrentSession().find(Car.class, id);
     }
 
     @Override

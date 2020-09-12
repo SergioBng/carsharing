@@ -12,10 +12,10 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = {"com.trutsin.dal.dao", "com.trutsin.dal.entity"})
+@ComponentScan("com.trutsin.dal")
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-public class HibernateConfig {
+public class DaoConfig {
     private Environment environment;
 
     @Autowired
