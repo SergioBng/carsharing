@@ -4,7 +4,9 @@ import com.trutsin.dal.dao.impl.UserDaoImpl;
 import com.trutsin.dal.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     private final SessionFactory sessionFactory;
 

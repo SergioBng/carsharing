@@ -4,7 +4,9 @@ import com.trutsin.dal.dao.impl.TripDaoImpl;
 import com.trutsin.dal.entity.Trip;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TripService {
     private final SessionFactory sessionFactory;
 

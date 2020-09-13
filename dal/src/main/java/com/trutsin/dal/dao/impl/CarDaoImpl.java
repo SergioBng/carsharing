@@ -30,8 +30,24 @@ public class CarDaoImpl implements CarDao {
         return INSTANCE;
     }
 
+    @Override
+    public void create(Car car) {
+        sessionFactory.getCurrentSession().save(car);
+    }
+
+    @Override
     public Car readById(int id) {
         return sessionFactory.getCurrentSession().find(Car.class, id);
+    }
+
+    @Override
+    public void update(Car car) {
+        sessionFactory.getCurrentSession().update(car);
+    }
+
+    @Override
+    public void delete(Car car) {
+        sessionFactory.getCurrentSession().delete(car);
     }
 
     @Override
