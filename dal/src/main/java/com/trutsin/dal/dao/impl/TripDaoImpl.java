@@ -3,8 +3,19 @@ package com.trutsin.dal.dao.impl;
 import com.trutsin.dal.dao.TripDao;
 import com.trutsin.dal.entity.Trip;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class TripDaoImpl implements TripDao {
+    private SessionFactory sessionFactory;
+
+    @Autowired
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     private static final Object LOCK = new Object();
     private static TripDaoImpl INSTANCE = null;
 
