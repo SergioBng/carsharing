@@ -4,7 +4,9 @@ import com.trutsin.dal.dao.impl.CarDaoImpl;
 import com.trutsin.dal.entity.Car;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CarService {
     private final SessionFactory sessionFactory;
 

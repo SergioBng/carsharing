@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>Welcome in Carsharing App</h1>
-<a href="cars.jsp">Choose your car</a>
+<a href="/cars">Choose your car</a>
 </body>
 </html>

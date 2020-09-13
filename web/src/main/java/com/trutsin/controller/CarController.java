@@ -11,14 +11,14 @@ public class CarController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView showHome() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("showHome");
+        modelAndView.setViewName("home");
         return modelAndView;
     }
 
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     public ModelAndView showCars() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("showCars");
+        modelAndView.setViewName("cars");
         return modelAndView;
     }
 }
