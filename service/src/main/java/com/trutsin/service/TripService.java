@@ -14,9 +14,6 @@ public class TripService {
         this.sessionFactory = sessionFactory;
     }
 
-    public Trip readTripById(int id, TripService tripService) {
-        return TripDaoImpl.getInstance().readById(id, tripService.sessionFactory.openSession());
-    }
 
     public void updateTrip(Trip trip, Session session) {
         TripDaoImpl.getInstance().update(trip, session);

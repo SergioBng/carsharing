@@ -1,6 +1,5 @@
 package com.trutsin.controller;
 
-import com.trutsin.service.CarService;
 import com.trutsin.service.CarServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CarController {
-    private CarService carService;
+    private CarServiceImpl carService;
 
     @Autowired
-    public void setCarService(CarService carService) {
+    public void setCarService(CarServiceImpl carService) {
         this.carService = carService;
     }
 
