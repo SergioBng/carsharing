@@ -9,12 +9,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class TripDaoImpl implements TripDao {
-    private SessionFactory sessionFactory;
+//    private SessionFactory sessionFactory;
 
-    @Autowired
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+//    @Autowired
+//    public void setSessionFactory(SessionFactory sessionFactory) {
+//        this.sessionFactory = sessionFactory;
+//    }
 
     private static final Object LOCK = new Object();
     private static TripDaoImpl INSTANCE = null;

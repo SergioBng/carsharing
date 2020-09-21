@@ -16,38 +16,33 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class CarsharingMappingApp {
     public static void main(String[] args) {
-//        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//
-//
-////        User user1 = new User("Mark", "Corv", "mark1220", "123Qw23", "driver");
-////        User user2 = new User("Genry", "Ford", "Genry65", "12340999k", "driver");
-////        Car car1 = new Car("Skoda Rapid");
-////        Car car2 = new Car("Volkswagen Polo");
-////        UserDaoImpl.getInstance().create(user1, session);
-////        UserDaoImpl.getInstance().create(user2, session);
-////        CarDaoImpl.getInstance().create(car1, session);
-////        CarDaoImpl.getInstance().create(car2, session);
-////
-////        Trip trip1 = new Trip(12, 1, "Finished", user1, car2);
-////        TripDaoImpl.getInstance().create(trip1, session);
-//
-//        Trip tripFromDb = TripDaoImpl.getInstance().readById(8, session);
-//        System.out.println(tripFromDb);
-//        String name = tripFromDb.getUser().getLastName();
-//        System.out.println(name);
-//
-//
-//
-//
-//        transaction.commit();
-//        session.close();
-//        sessionFactory.close();
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DaoConfig.class);
-        CarDaoImpl carDao = context.getBean("carDaoImpl", CarDaoImpl.class);
-        Car car = carDao.readById(6);
-        System.out.println(car);
+
+//        User user1 = new User("Mark", "Corv", "mark1220", "123Qw23", "driver");
+//        User user2 = new User("Genry", "Ford", "Genry65", "12340999k", "driver");
+//        Car car1 = new Car("Skoda Rapid");
+//        Car car2 = new Car("Volkswagen Polo");
+//        UserDaoImpl.getInstance().create(user1, session);
+//        UserDaoImpl.getInstance().create(user2, session);
+//        CarDaoImpl.getInstance().create(car1, session);
+//        CarDaoImpl.getInstance().create(car2, session);
+//
+//        Trip trip1 = new Trip(12, 1, "Finished", user1, car2);
+//        TripDaoImpl.getInstance().create(trip1, session);
+
+        Trip tripFromDb = TripDaoImpl.getInstance().readById(8, session);
+        System.out.println(tripFromDb);
+        String name = tripFromDb.getUser().getLastName();
+        System.out.println(name);
+
+
+
+
+        transaction.commit();
+        session.close();
+        sessionFactory.close();
     }
 }

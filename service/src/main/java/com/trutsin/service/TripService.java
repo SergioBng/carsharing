@@ -8,11 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TripService {
-    private final SessionFactory sessionFactory;
-
-    public TripService(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    private SessionFactory sessionFactory;
 
 
     public void updateTrip(Trip trip, Session session) {

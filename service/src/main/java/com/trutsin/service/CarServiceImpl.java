@@ -9,30 +9,30 @@ import javax.transaction.Transactional;
 
 @Service
 public class CarServiceImpl implements CarService{
-    private CarDao carDao;
-
-    @Autowired
-    public void setCarDao(CarDao carDao) {
-        this.carDao = carDao;
-    }
-
-    @Transactional
-    public void createCar(Car car) {
-        carDao.create(car);
-    }
-
-    @Transactional
-    public Car readCarById(int id) {
-        return carDao.readById(id);
-    }
-
-    @Transactional
-    public void updateCar(Car car) {
-        carDao.update(car);
-    }
-
-    @Transactional
-    public void deleteCar(Car car) {
-        carDao.delete(car);
-    }
+//    private CarDao carDao;
+//
+//    @Autowired
+//    public void setCarDao(CarDao carDao) {
+//        this.carDao = carDao;
+//    }
+//
+//    @Transactional
+//    public void createCar(Car car) {
+//        carDao.create(car);
+//    }
+//
+//    @Transactional
+//    public Car readCarById(int id) {
+//        return carDao.readById(id);
+//    }
+//
+//    @Transactional
+//    public void updateCar(Car car) {
+//        carDao.update(car);
+//    }
+//
+//    @Transactional
+//    public void deleteCar(Car car) {
+//        carDao.delete(car);
+//    }
 }

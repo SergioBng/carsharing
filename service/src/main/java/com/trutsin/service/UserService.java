@@ -8,11 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    private final SessionFactory sessionFactory;
-
-    public UserService(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    private SessionFactory sessionFactory;
 
     public void createUser(User user, Session session) {
         UserDaoImpl.getInstance().create(user,session);
