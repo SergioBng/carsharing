@@ -1,7 +1,6 @@
 package com.trutsin.controller;
 
 import com.trutsin.dal.entity.Car;
-import com.trutsin.model.Film;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
