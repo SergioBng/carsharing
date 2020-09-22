@@ -1,4 +1,4 @@
-package com.trutsin.service;
+package com.trutsin.service.services;
 
 import com.trutsin.dal.dao.impl.TripDaoImpl;
 import com.trutsin.dal.entity.Trip;

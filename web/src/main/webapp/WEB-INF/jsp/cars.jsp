@@ -9,6 +9,17 @@
     <body>
         <h1>Page with cars:</h1>
 
-        <p> ${car}</p>
+        <table>
+            <tr>
+                <th>id: </th>
+                <th>model: </th>
+            </tr>
+            <c:forEach var="car" items="${carsList}">
+                <tr>
+                    <td>${car.id}</td>
+                    <td>${car.model}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </body>
 </html>

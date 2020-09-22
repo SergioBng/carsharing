@@ -1,19 +1,18 @@
 package com.trutsin.controller;
 
 import com.trutsin.dal.entity.Car;
+import com.trutsin.service.services.CarService;
+import com.trutsin.service.services.CarServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class CarController {
-    private static Car car;
-
-    static {
-        car = new Car();
-        car.setModel("Ford Mondeo");
-    }
+    private CarService carService = new CarServiceImpl();
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView showHome() {
@@ -24,9 +23,10 @@ public class CarController {
 
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     public ModelAndView showCars() {
+        List<Car> cars = carService.readAllCars();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("cars");
-        modelAndView.addObject("car", car);
+        modelAndView.addObject("carsList", cars);
         return modelAndView;
     }
 }

@@ -7,9 +7,30 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Repository
 public class CarDaoImpl implements CarDao {
     private SessionFactory sessionFactory;
+
+    private static final AtomicInteger AUTO_ID = new AtomicInteger();
+    private static Map<Integer, Car> cars = new HashMap<>();
+
+    static {
+        Car car1 = new Car();
+        car1.setId(AUTO_ID.getAndIncrement());
+        car1.setModel("Ford Mondeo");
+        cars.put(car1.getId(), car1);
+        Car car2 = new Car();
+        car2.setId(AUTO_ID.getAndIncrement());
+        car2.setModel("VW Jetta");
+        cars.put(car2.getId(), car2);
+        Car car3 = new Car();
+        car3.setId(AUTO_ID.getAndIncrement());
+        car3.setModel("Skoda Rapid");
+        cars.put(car3.getId(), car3);
+    }
 
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
@@ -28,6 +49,11 @@ public class CarDaoImpl implements CarDao {
             }
         }
         return INSTANCE;
+    }
+
+    @Override
+    public List<Car> allCars() {
+        return new ArrayList<>(cars.values());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.trutsin.service;
+package com.trutsin.service.services;
 
 import com.trutsin.dal.dao.impl.UserDaoImpl;
 import com.trutsin.dal.entity.User;
