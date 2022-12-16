@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <spring.version>5.2.8.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <java.version>1.8</java.version>
     </properties>
